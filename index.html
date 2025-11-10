@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional - IA Generativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="A.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header Mejorado -->
+<header class="bg-[#0369a1] text-white shadow-lg fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-graduation-cap text-2xl text-[#f59e0b]"></i>
+                <div>
+                    <h1 class="text-xl font-bold">Instituto Tecnológico</h1>
+                    <p class="text-blue-200 text-sm hidden sm:block">Excelencia Educativa</p>
+                </div>
+            </div>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4 lg:space-x-6">
+                    <li><a href="#home" class="nav-link active px-3 py-2 rounded-lg transition" data-section="home">Inicio</a></li>
+                    <li><a href="#cargar-alumno" class="nav-link px-3 py-2 rounded-lg transition" data-section="cargar-alumno">Cargar Alumno</a></li>
+                    <li><a href="#listado-alumnos" class="nav-link px-3 py-2 rounded-lg transition" data-section="listado-alumnos">Listado</a></li>
+                    <li><a href="#historia" class="nav-link px-3 py-2 rounded-lg transition" data-section="historia">Historia</a></li>
+                    <li><a href="#ia-generativa" class="nav-link px-3 py-2 rounded-lg transition" data-section="ia-generativa">IA Generativa</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Mejorada -->
+        <nav id="mobile-menu" class="mobile-menu md:hidden mt-4 hidden bg-[#0369a1] rounded-lg shadow-xl">
+            <ul class="space-y-1 py-2">
+                <li><a href="#home" class="nav-link mobile-nav-link active block py-3 px-4 rounded-lg mx-2 transition" data-section="home">
+                    <i class="fas fa-home mr-3 w-6 text-center"></i>Inicio
+                </a></li>
+                <li><a href="#cargar-alumno" class="nav-link mobile-nav-link block py-3 px-4 rounded-lg mx-2 transition" data-section="cargar-alumno">
+                    <i class="fas fa-user-plus mr-3 w-6 text-center"></i>Cargar Alumno
+                </a></li>
+                <li><a href="#listado-alumnos" class="nav-link mobile-nav-link block py-3 px-4 rounded-lg mx-2 transition" data-section="listado-alumnos">
+                    <i class="fas fa-list mr-3 w-6 text-center"></i>Listado
+                </a></li>
+                <li><a href="#historia" class="nav-link mobile-nav-link block py-3 px-4 rounded-lg mx-2 transition" data-section="historia">
+                    <i class="fas fa-history mr-3 w-6 text-center"></i>Historia
+                </a></li>
+                <li><a href="#ia-generativa" class="nav-link mobile-nav-link block py-3 px-4 rounded-lg mx-2 transition" data-section="ia-generativa">
+                    <i class="fas fa-robot mr-3 w-6 text-center"></i>IA Generativa
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="container mx-auto px-4 py-8 mt-20 md:mt-24">
+    <!-- Home Section Mejorada -->
+    <section id="home" class="section active">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Widget de Clima Mejorado -->
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-md p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold text-[#0369a1] mb-4 md:mb-6">Clima Actual</h2>
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="flex items-center space-x-4 md:space-x-6 mb-4 md:mb-0">
+                        <div id="clima-icon" class="text-4xl md:text-6xl text-[#f59e0b]">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div>
+                            <p id="ciudad" class="text-lg md:text-xl font-semibold text-gray-800">Buenos Aires</p>
+                            <p id="temperatura" class="text-3xl md:text-4xl font-bold text-[#0369a1]">22°C</p>
+                            <p id="descripcion" class="text-gray-600 text-sm md:text-base">Soleado</p>
+                        </div>
+                    </div>
+
+                    <!-- Buscador de Clima Mejorado -->
+                    <div class="w-full md:w-auto">
+                        <h3 class="text-base md:text-lg font-medium text-gray-800 mb-2">Buscar otra ciudad</h3>
+                        <div class="flex space-x-2">
+                            <input type="text" id="ciudad-buscar" placeholder="Ingresa una ciudad"
+                                class="flex-grow px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488] text-sm md:text-base">
+                            <button id="buscar-clima"
+                                class="bg-[#0d9488] text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-[#0f766e] transition text-sm md:text-base">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Mejorado -->
+            <div class="bg-white rounded-xl shadow-md p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold text-[#0369a1] mb-4 md:mb-6">Acciones Rápidas</h2>
+                <div class="space-y-3 md:space-y-4">
+                    <button data-section="cargar-alumno"
+                        class="nav-action-btn w-full bg-[#0d9488] text-white py-2 md:py-3 px-3 md:px-4 rounded-lg hover:bg-[#0f766e] transition flex items-center justify-center space-x-2 text-sm md:text-base">
+                        <i class="fas fa-user-plus text-sm md:text-base"></i>
+                        <span>Cargar Nuevo Alumno</span>
+                    </button>
+                    <button data-section="listado-alumnos"
+                        class="nav-action-btn w-full bg-[#0369a1] text-white py-2 md:py-3 px-3 md:px-4 rounded-lg hover:bg-[#1e40af] transition flex items-center justify-center space-x-2 text-sm md:text-base">
+                        <i class="fas fa-list text-sm md:text-base"></i>
+                        <span>Ver Listado Completo</span>
+                    </button>
+                    <button data-section="ia-generativa"
+                        class="nav-action-btn w-full bg-[#f59e0b] text-white py-2 md:py-3 px-3 md:px-4 rounded-lg hover:bg-[#d97706] transition flex items-center justify-center space-x-2 text-sm md:text-base">
+                        <i class="fas fa-robot text-sm md:text-base"></i>
+                        <span>Explorar IA Generativa</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información Institucional Mejorada -->
+        <div class="mt-6 md:mt-8">
+            <div class="bg-white rounded-xl shadow-md p-4 md:p-6 lg:p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-start">
+                    <!-- Texto de bienvenida -->
+                    <div class="lg:col-span-2">
+                        <h3 class="text-2xl md:text-3xl font-bold text-[#0369a1] mb-4">Bienvenidos al Instituto Tecnológico</h3>
+                        <p class="text-gray-700 text-base md:text-lg mb-4 md:mb-6 leading-relaxed">
+                            En el <strong>Instituto Tecnológico</strong> nos dedicamos a formar profesionales de
+                            excelencia en el área tecnológica, combinando <strong>tradición educativa</strong> con
+                            <strong>innovación constante</strong>. Con más de 50 años de experiencia, hemos graduado a más de 15,000 profesionales
+                            que hoy lideran la transformación digital a nivel nacional e internacional.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
+                            <div class="text-center">
+                                <div class="bg-[#e0f2fe] text-[#0369a1] p-2 md:p-3 rounded-full inline-block mb-2">
+                                    <i class="fas fa-graduation-cap text-lg md:text-xl"></i>
+                                </div>
+                                <p class="font-bold text-gray-800 text-sm md:text-base">15,000+</p>
+                                <p class="text-xs md:text-sm text-gray-600">Egresados</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="bg-[#fef3c7] text-[#f59e0b] p-2 md:p-3 rounded-full inline-block mb-2">
+                                    <i class="fas fa-laptop-code text-lg md:text-xl"></i>
+                                </div>
+                                <p class="font-bold text-gray-800 text-sm md:text-base">25</p>
+                                <p class="text-xs md:text-sm text-gray-600">Carreras Activas</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="bg-[#d1fae5] text-[#0d9488] p-2 md:p-3 rounded-full inline-block mb-2">
+                                    <i class="fas fa-chart-line text-lg md:text-xl"></i>
+                                </div>
+                                <p class="font-bold text-gray-800 text-sm md:text-base">96%</p>
+                                <p class="text-xs md:text-sm text-gray-600">Inserción Laboral</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
+                            <!-- Botón MEJORADO y responsive -->
+                            <button data-section="historia"
+                                class="group relative bg-[#0d9488] hover:bg-[#0f766e] text-white px-4 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg flex items-center justify-center overflow-hidden text-sm md:text-base w-full sm:w-auto">
+                                <i class="fas fa-history mr-2 md:mr-3 text-base md:text-lg group-hover:rotate-12 transition-transform duration-300"></i>
+                                <span class="relative z-10">Conoce Nuestra Historia</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Imagen o gráfico decorativo Mejorado -->
+                    <div class="text-center mt-6 lg:mt-0">
+                        <div class="bg-gradient-to-br from-[#0369a1] to-[#0d9488] text-white p-4 md:p-6 lg:p-8 rounded-lg shadow-lg">
+                            <i class="fas fa-graduation-cap text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4"></i>
+                            <h4 class="text-lg md:text-xl font-bold mb-2">Excelencia Educativa</h4>
+                            <p class="text-blue-100 text-xs md:text-sm">
+                                Formando los líderes tecnológicos del mañana con educación de vanguardia
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Cargar Alumno Section -->
+        <section id="cargar-alumno" class="section">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-[#0369a1] mb-2">Cargar Nuevo Alumno</h2>
+                <p class="text-gray-600 mb-8">Complete el formulario para registrar un nuevo alumno en el sistema</p>
+
+                <form id="form-alumno" class="bg-white rounded-xl shadow-md p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Nombre -->
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent">
+                            <span class="error-message text-red-500 text-sm hidden">Este campo es obligatorio</span>
+                        </div>
+
+                        <!-- Apellido -->
+                        <div>
+                            <label for="apellido" class="block text-sm font-medium text-gray-700 mb-2">Apellido
+                                *</label>
+                            <input type="text" id="apellido" name="apellido" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent">
+                            <span class="error-message text-red-500 text-sm hidden">Este campo es obligatorio</span>
+                        </div>
+
+                        <!-- DNI -->
+                        <div>
+                            <label for="dni" class="block text-sm font-medium text-gray-700 mb-2">DNI *</label>
+                            <input type="text" id="dni" name="dni" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent">
+                            <span class="error-message text-red-500 text-sm hidden">El DNI es obligatorio</span>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent">
+                            <span class="error-message text-red-500 text-sm hidden">Ingrese un email válido</span>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div>
+                            <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent">
+                        </div>
+
+                        <!-- Curso -->
+                        <div>
+                            <label for="curso" class="block text-sm font-medium text-gray-700 mb-2">Curso *</label>
+                            <select id="curso" name="curso" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent">
+                                <option value="">Seleccione un curso</option>
+                                <option value="1A">1° Año - A</option>
+                                <option value="1B">1° Año - B</option>
+                                <option value="2A">2° Año - A</option>
+                                <option value="2B">2° Año - B</option>
+                                <option value="3A">3° Año - A</option>
+                                <option value="3B">3° Año - B</option>
+                            </select>
+                            <span class="error-message text-red-500 text-sm hidden">Seleccione un curso</span>
+                        </div>
+
+                        <!-- Fecha Nacimiento -->
+                        <div class="md:col-span-2">
+                            <label for="fecha-nacimiento" class="block text-sm font-medium text-gray-700 mb-2">Fecha de
+                                Nacimiento</label>
+                            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <button type="submit"
+                            class="flex-1 bg-[#0d9488] text-white py-3 px-6 rounded-lg hover:bg-[#0f766e] transition font-semibold">
+                            <i class="fas fa-save mr-2"></i>Guardar Alumno
+                        </button>
+                        <button type="button" id="limpiar-form"
+                            class="flex-1 bg-gray-500 text-white py-3 px-6 rounded-lg hover:bg-gray-600 transition font-semibold">
+                            <i class="fas fa-broom mr-2"></i>Limpiar Formulario
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Mensaje de confirmación -->
+                <div id="mensaje-exito"
+                    class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span>Alumno registrado exitosamente</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Listado Alumnos Section -->
+        <section id="listado-alumnos" class="section">
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6">
+                    <div>
+                        <h2 class="text-3xl font-bold text-[#0369a1] mb-2">Listado de Alumnos</h2>
+                        <p class="text-gray-600">Gestione la información de los alumnos registrados</p>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="flex flex-col sm:flex-row gap-4 mt-4 lg:mt-0">
+                        <select id="filtro-curso"
+                            class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0d9488]">
+                            <option value="">Todos los cursos</option>
+                            <option value="1A">1° Año - A</option>
+                            <option value="1B">1° Año - B</option>
+                            <option value="2A">2° Año - A</option>
+                            <option value="2B">2° Año - B</option>
+                            <option value="3A">3° Año - A</option>
+                            <option value="3B">3° Año - B</option>
+                        </select>
+
+                        <button id="btn-exportar"
+                            class="bg-[#f59e0b] text-white px-4 py-2 rounded-lg hover:bg-[#d97706] transition">
+                            <i class="fas fa-download mr-2"></i>Exportar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tabla de Alumnos -->
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-full">
+                        <thead>
+                            <tr class="bg-gray-50 border-b-2 border-gray-200">
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Alumno</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    DNI</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Email</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Curso</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-alumnos-body" class="divide-y divide-gray-200">
+                            <!-- Los datos se cargan dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Mensaje sin datos -->
+                <div id="mensaje-sin-datos" class="text-center py-8 hidden">
+                    <i class="fas fa-users text-4xl text-gray-300 mb-4"></i>
+                    <p class="text-gray-500 text-lg">No hay alumnos registrados</p>
+                    <button data-section="cargar-alumno"
+                        class="nav-action-btn mt-4 bg-[#0d9488] text-white px-6 py-2 rounded-lg hover:bg-[#0f766e] transition">
+                        Cargar primer alumno
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historia Section -->
+        <!-- Historia Section - VERSIÓN COMPLETA MEJORADA -->
+        <section id="historia" class="section">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <!-- Hero Section -->
+                <div class="bg-gradient-to-r from-[#0369a1] to-[#0d9488] text-white p-8">
+                    <div class="container mx-auto">
+                        <h2 class="text-4xl font-bold mb-4">Nuestra Historia</h2>
+                        <p class="text-xl text-blue-100">Más de 50 años formando líderes tecnológicos con excelencia
+                            académica</p>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <!-- Timeline Extendido -->
+                    <div class="max-w-6xl mx-auto">
+
+                        <!-- 1965 - Antecedentes -->
+                        <div class="flex flex-col md:flex-row items-start mb-16">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div class="bg-[#7c3aed] text-white px-6 py-3 rounded-lg inline-block shadow-lg">
+                                    <span class="font-bold text-2xl">1965</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Los Inicios</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#7c3aed]">
+                                    <h3 class="text-2xl font-bold text-[#0369a1] mb-4">Visión Fundacional</h3>
+                                    <p class="text-gray-700 mb-4 leading-relaxed">
+                                        En el contexto de una Argentina en pleno proceso de industrialización, un grupo
+                                        de
+                                        visionarios educadores liderados por el <strong>Profesor Roberto
+                                            Mendoza</strong> identificó
+                                        la necesidad crítica de formación técnica especializada. Tras años de
+                                        investigación
+                                        y planificación, sentaron las bases de lo que sería una institución pionera en
+                                        educación tecnológica.
+                                    </p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="bg-[#7c3aed] text-white p-2 rounded-lg">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-gray-800">Equipo Fundador</p>
+                                                <p class="text-sm text-gray-600">12 educadores especializados</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="bg-[#7c3aed] text-white p-2 rounded-lg">
+                                                <i class="fas fa-map-marked-alt"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-gray-800">Ubicación Original</p>
+                                                <p class="text-sm text-gray-600">Barrio de Almagro, Buenos Aires</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1970 - Fundación -->
+                        <div class="flex flex-col md:flex-row items-start mb-16">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div class="bg-[#f59e0b] text-white px-6 py-3 rounded-lg inline-block shadow-lg">
+                                    <span class="font-bold text-2xl">1970</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Fundación Oficial</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#f59e0b]">
+                                    <h3 class="text-2xl font-bold text-[#0369a1] mb-4">Nacimiento del Instituto</h3>
+                                    <p class="text-gray-700 mb-4 leading-relaxed">
+                                        El <strong>15 de marzo de 1970</strong> se inaugura oficialmente el Instituto
+                                        Tecnológico
+                                        en un emblemático edificio de Almagro. Comenzamos con 3 carreras técnicas
+                                        fundamentales
+                                        y una primera generación de 87 estudiantes comprometidos con el futuro
+                                        tecnológico
+                                        del país.
+                                    </p>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                            <div class="bg-[#f59e0b] text-white p-3 rounded-full inline-block mb-3">
+                                                <i class="fas fa-user-graduate text-xl"></i>
+                                            </div>
+                                            <h4 class="font-bold text-gray-800">87</h4>
+                                            <p class="text-sm text-gray-600">Estudiantes Fundadores</p>
+                                        </div>
+                                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                            <div class="bg-[#0369a1] text-white p-3 rounded-full inline-block mb-3">
+                                                <i class="fas fa-book text-xl"></i>
+                                            </div>
+                                            <h4 class="font-bold text-gray-800">3</h4>
+                                            <p class="text-sm text-gray-600">Carreras Iniciales</p>
+                                        </div>
+                                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                            <div class="bg-[#0d9488] text-white p-3 rounded-full inline-block mb-3">
+                                                <i class="fas fa-chalkboard-teacher text-xl"></i>
+                                            </div>
+                                            <h4 class="font-bold text-gray-800">15</h4>
+                                            <p class="text-sm text-gray-600">Docentes Fundadores</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                        <p class="text-sm italic text-yellow-800">
+                                            "Soñábamos con una institución donde la excelencia académica y la innovación
+                                            tecnológica se encontraran para formar a los profesionales del futuro."
+                                        </p>
+                                        <p class="text-sm font-semibold mt-2 text-yellow-900">- Prof. Roberto Mendoza,
+                                            Fundador</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1980 - Expansión -->
+                        <div class="flex flex-col md:flex-row items-start mb-16">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div class="bg-[#dc2626] text-white px-6 py-3 rounded-lg inline-block shadow-lg">
+                                    <span class="font-bold text-2xl">1980</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Primera Expansión</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#dc2626]">
+                                    <h3 class="text-2xl font-bold text-[#0369a1] mb-4">Crecimiento y Consolidación</h3>
+                                    <p class="text-gray-700 mb-4 leading-relaxed">
+                                        La demanda de educación técnica creció exponencialmente durante la década.
+                                        Adquirimos un nuevo edificio en Caballito y expandimos nuestra oferta académica
+                                        a 8 carreras técnicas. Nuestra comunidad estudiantil superó los 500 alumnos y
+                                        establecimos los primeros convenios con empresas líderes del sector industrial.
+                                    </p>
+                                    <div class="bg-red-50 p-6 rounded-lg mt-4">
+                                        <h4 class="font-bold text-red-800 mb-3 flex items-center">
+                                            <i class="fas fa-trophy mr-2"></i>Logros Destacados de la Década
+                                        </h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <ul class="list-disc list-inside text-red-700 space-y-2">
+                                                <li>Primer laboratorio de electrónica del país en institución privada
+                                                </li>
+                                                <li>Programa de becas para estudiantes de bajos recursos</li>
+                                                <li>Convenio con 15 empresas para prácticas profesionales</li>
+                                            </ul>
+                                            <ul class="list-disc list-inside text-red-700 space-y-2">
+                                                <li>Primera feria tecnológica interinstitucional</li>
+                                                <li>Publicación del primer manual técnico propio</li>
+                                                <li>Reconocimiento del Ministerio de Educación</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1990 - Era Digital -->
+                        <div class="flex flex-col md:flex-row items-start mb-16">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div class="bg-[#0d9488] text-white px-6 py-3 rounded-lg inline-block shadow-lg">
+                                    <span class="font-bold text-2xl">1990</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Revolución Digital</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#0d9488]">
+                                    <h3 class="text-2xl font-bold text-[#0369a1] mb-4">Adopción Tecnológica</h3>
+                                    <p class="text-gray-700 mb-4 leading-relaxed">
+                                        Incorporamos las primeras computadoras IBM y Apple, marcando el inicio de
+                                        nuestra
+                                        transformación digital. Creamos el primer programa de Informática Aplicada y
+                                        establecimos una de las primeras conexiones a Internet académica del país.
+                                        Esta década nos posicionó como pioneros en la integración de tecnología
+                                        educativa.
+                                    </p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                                        <div class="bg-white p-4 rounded-lg shadow-sm border">
+                                            <div class="flex items-center space-x-3 mb-3">
+                                                <div class="bg-[#0d9488] text-white p-2 rounded-lg">
+                                                    <i class="fas fa-desktop"></i>
+                                                </div>
+                                                <h5 class="font-bold text-gray-800">Infraestructura Tecnológica</h5>
+                                            </div>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• 20 computadoras IBM y Apple</li>
+                                                <li>• Primer laboratorio de computación</li>
+                                                <li>• Red local Ethernet</li>
+                                                <li>• Impresoras matriciales y láser</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-white p-4 rounded-lg shadow-sm border">
+                                            <div class="flex items-center space-x-3 mb-3">
+                                                <div class="bg-[#0369a1] text-white p-2 rounded-lg">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <h5 class="font-bold text-gray-800">Innovaciones Académicas</h5>
+                                            </div>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• Programa de Informática Aplicada</li>
+                                                <li>• Primeros cursos de programación</li>
+                                                <li>• Talleres de software educativo</li>
+                                                <li>• Certificación Microsoft</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2000 - Milenio -->
+                        <div class="flex flex-col md:flex-row items-start mb-16">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div class="bg-[#7c3aed] text-white px-6 py-3 rounded-lg inline-block shadow-lg">
+                                    <span class="font-bold text-2xl">2000</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Nuevo Milenio</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#7c3aed]">
+                                    <h3 class="text-2xl font-bold text-[#0369a1] mb-4">Globalización e Innovación</h3>
+                                    <p class="text-gray-700 mb-4 leading-relaxed">
+                                        Ingresamos al siglo XXI con una completa modernización de infraestructura y
+                                        currículas.
+                                        Lanzamos nuestros primeros programas de educación a distancia y establecimos
+                                        alianzas
+                                        internacionales con universidades de Europa y Estados Unidos. Implementamos el
+                                        sistema
+                                        de créditos académicos y dobles titulaciones.
+                                    </p>
+                                    <div class="bg-purple-50 p-6 rounded-lg mt-4">
+                                        <h4 class="font-bold text-purple-800 mb-4 flex items-center">
+                                            <i class="fas fa-globe-americas mr-2"></i>Expansión Internacional
+                                        </h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                                            <div>
+                                                <div class="bg-white p-3 rounded-full inline-block mb-2">
+                                                    <i class="fas fa-university text-purple-600 text-xl"></i>
+                                                </div>
+                                                <p class="font-semibold">12 Universidades</p>
+                                                <p class="text-sm text-purple-600">Convenios internacionales</p>
+                                            </div>
+                                            <div>
+                                                <div class="bg-white p-3 rounded-full inline-block mb-2">
+                                                    <i class="fas fa-plane text-purple-600 text-xl"></i>
+                                                </div>
+                                                <p class="font-semibold">8 Países</p>
+                                                <p class="text-sm text-purple-600">Intercambios estudiantiles</p>
+                                            </div>
+                                            <div>
+                                                <div class="bg-white p-3 rounded-full inline-block mb-2">
+                                                    <i class="fas fa-certificate text-purple-600 text-xl"></i>
+                                                </div>
+                                                <p class="font-semibold">5 Dobles Titulaciones</p>
+                                                <p class="text-sm text-purple-600">Programas internacionales</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2010 - Consolidación -->
+                        <div class="flex flex-col md:flex-row items-start mb-16">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div class="bg-[#0369a1] text-white px-6 py-3 rounded-lg inline-block shadow-lg">
+                                    <span class="font-bold text-2xl">2010</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Consolidación Nacional</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#0369a1]">
+                                    <h3 class="text-2xl font-bold text-[#0369a1] mb-4">Liderazgo en Educación
+                                        Tecnológica</h3>
+                                    <p class="text-gray-700 mb-4 leading-relaxed">
+                                        Nos convertimos en referente nacional de educación tecnológica. Aperturamos
+                                        sedes
+                                        en Córdoba y Mendoza, y lanzamos carreras pioneras en áreas emergentes como
+                                        ciberseguridad, desarrollo de videojuegos y energías renovables. Nuestro modelo
+                                        educativo fue reconocido por su innovación y pertinencia con el mercado laboral.
+                                    </p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                                        <div class="bg-blue-50 p-4 rounded-lg">
+                                            <h5 class="font-bold text-blue-800 mb-3">Nuevas Carreras Pioneras</h5>
+                                            <div class="space-y-3">
+                                                <div class="flex items-center space-x-3">
+                                                    <div class="bg-blue-100 text-blue-800 p-2 rounded-lg">
+                                                        <i class="fas fa-shield-alt"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="font-semibold">Ciberseguridad</p>
+                                                        <p class="text-xs text-blue-600">Primera en el país</p>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center space-x-3">
+                                                    <div class="bg-blue-100 text-blue-800 p-2 rounded-lg">
+                                                        <i class="fas fa-gamepad"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="font-semibold">Desarrollo de Videojuegos</p>
+                                                        <p class="text-xs text-blue-600">Programa innovador</p>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center space-x-3">
+                                                    <div class="bg-blue-100 text-blue-800 p-2 rounded-lg">
+                                                        <i class="fas fa-solar-panel"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="font-semibold">Energías Renovables</p>
+                                                        <p class="text-xs text-blue-600">Enfoque sostenible</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-green-50 p-4 rounded-lg">
+                                            <h5 class="font-bold text-green-800 mb-3">Reconocimientos</h5>
+                                            <ul class="list-disc list-inside text-green-700 space-y-2 text-sm">
+                                                <li>Premio a la Innovación Educativa 2012</li>
+                                                <li>Certificación de Calidad ISO 9001</li>
+                                                <li>Reconocimiento del CONICET</li>
+                                                <li>Mejor Institución Tecnológica 2015</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2020 - Pandemia -->
+                        <div class="flex flex-col md:flex-row items-start mb-16">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div class="bg-[#dc2626] text-white px-6 py-3 rounded-lg inline-block shadow-lg">
+                                    <span class="font-bold text-2xl">2020</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Resiliencia Digital</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#dc2626]">
+                                    <h3 class="text-2xl font-bold text-[#0369a1] mb-4">Transformación en Tiempos de
+                                        Crisis</h3>
+                                    <p class="text-gray-700 mb-4 leading-relaxed">
+                                        Frente a la pandemia global, implementamos en 72 horas una completa
+                                        transformación
+                                        digital que permitió la continuidad académica del 100% de nuestros estudiantes.
+                                        Desarrollamos plataformas propias, capacitamos a todo el cuerpo docente en
+                                        educación
+                                        remota y establecimos un sistema de apoyo psicológico para nuestra comunidad
+                                        educativa.
+                                    </p>
+                                    <div class="bg-red-50 p-6 rounded-lg mt-4">
+                                        <h4 class="font-bold text-red-800 mb-4 flex items-center">
+                                            <i class="fas fa-laptop-medical mr-2"></i>Respuesta COVID-19
+                                        </h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h5 class="font-semibold text-red-700 mb-2">Logros Operativos</h5>
+                                                <ul class="list-disc list-inside text-red-600 space-y-1 text-sm">
+                                                    <li>Transición completa a modalidad virtual en 72 horas</li>
+                                                    <li>100% de continuidad académica garantizada</li>
+                                                    <li>Plataforma de educación remota propia desarrollada</li>
+                                                    <li>1,200 docentes capacitados en herramientas digitales</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-semibold text-red-700 mb-2">Apoyo Estudiantil</h5>
+                                                <ul class="list-disc list-inside text-red-600 space-y-1 text-sm">
+                                                    <li>Programa de apoyo psicológico gratuito</li>
+                                                    <li>Fondo de emergencia para estudiantes</li>
+                                                    <li>Préstamo de equipos tecnológicos</li>
+                                                    <li>Tutorías virtuales personalizadas</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actualidad -->
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div
+                                    class="bg-gradient-to-r from-[#0369a1] to-[#0d9488] text-white px-6 py-3 rounded-lg inline-block shadow-lg">
+                                    <span class="font-bold text-2xl">Actualidad</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Liderazgo en Innovación</p>
+                            </div>
+                            <div class="md:w-3/4 md:pl-8">
+                                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#0369a1]">
+                                    <h3 class="text-2xl font-bold text-[#0369a1] mb-4">Vanguardia Educativa Global</h3>
+                                    <p class="text-gray-700 mb-6 leading-relaxed">
+                                        Hoy somos referentes continental en educación tecnológica, formando a los
+                                        profesionales
+                                        del futuro con herramientas de vanguardia como inteligencia artificial, realidad
+                                        aumentada,
+                                        blockchain y internet de las cosas. Nuestro compromiso sigue siendo el mismo que
+                                        en 1970:
+                                        educación de calidad accesible para todos, combinando tradición académica con
+                                        innovación
+                                        disruptiva.
+                                    </p>
+
+                                    <!-- Estadísticas Actuales -->
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                            <div class="bg-[#f59e0b] text-white p-3 rounded-full inline-block mb-3">
+                                                <i class="fas fa-graduation-cap text-xl"></i>
+                                            </div>
+                                            <h4 class="text-2xl font-bold text-gray-800">15,000+</h4>
+                                            <p class="text-sm text-gray-600">Egresados</p>
+                                        </div>
+                                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                            <div class="bg-[#0d9488] text-white p-3 rounded-full inline-block mb-3">
+                                                <i class="fas fa-laptop-code text-xl"></i>
+                                            </div>
+                                            <h4 class="text-2xl font-bold text-gray-800">25</h4>
+                                            <p class="text-sm text-gray-600">Carreras Activas</p>
+                                        </div>
+                                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                            <div class="bg-[#0369a1] text-white p-3 rounded-full inline-block mb-3">
+                                                <i class="fas fa-chart-line text-xl"></i>
+                                            </div>
+                                            <h4 class="text-2xl font-bold text-gray-800">96%</h4>
+                                            <p class="text-sm text-gray-600">Inserción Laboral</p>
+                                        </div>
+                                        <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                            <div class="bg-[#7c3aed] text-white p-3 rounded-full inline-block mb-3">
+                                                <i class="fas fa-globe-americas text-xl"></i>
+                                            </div>
+                                            <h4 class="text-2xl font-bold text-gray-800">12</h4>
+                                            <p class="text-sm text-gray-600">Países Aliados</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tecnologías Emergentes -->
+                                    <div class="bg-gradient-to-r from-[#0369a1] to-[#0d9488] text-white p-6 rounded-lg">
+                                        <h4 class="text-xl font-bold mb-4 text-center">Tecnologías de Vanguardia
+                                            Implementadas</h4>
+                                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                            <div>
+                                                <i class="fas fa-robot text-3xl mb-2"></i>
+                                                <p class="font-semibold">IA y Machine Learning</p>
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-vr-cardboard text-3xl mb-2"></i>
+                                                <p class="font-semibold">Realidad Extendida</p>
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-link text-3xl mb-2"></i>
+                                                <p class="font-semibold">Blockchain</p>
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-cloud text-3xl mb-2"></i>
+                                                <p class="font-semibold">Cloud Computing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IA Generativa Section -->
+        <!-- IA Generativa Section - VERSIÓN COMPLETAMENTE OPTIMIZADA -->
+<section id="ia-generativa" class="section">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <!-- Hero Section Optimizada -->
+        <div class="bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] text-white p-4 md:p-6 lg:p-8">
+            <div class="container mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">Unidad 6 - Inteligencia Artificial Generativa</h2>
+                <p class="text-base md:text-lg lg:text-xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
+                    Explorando la frontera de la creatividad computacional y su impacto transformador
+                    en el desarrollo web y la sociedad digital
+                </p>
+            </div>
+        </div>
+
+        <div class="p-4 md:p-6 lg:p-8">
+            <!-- Introducción a IA Generativa - Optimizada -->
+            <div class="max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+                <div class="bg-gray-50 rounded-lg p-4 md:p-6 lg:p-8 border border-gray-200">
+                    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#0369a1] mb-4 md:mb-6 text-center">¿Qué es la Inteligencia
+                        Artificial Generativa?</h3>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-start">
+                        <div class="space-y-4">
+                            <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+                                La <strong>Inteligencia Artificial Generativa</strong> representa uno de los
+                                avances más significativos
+                                en la historia de la computación. A diferencia de la IA tradicional que se
+                                limita a
+                                analizar y clasificar datos existentes, la IA generativa tiene la capacidad
+                                única de
+                                <strong>crear contenido original y coherente</strong> a partir de patrones
+                                aprendidos de vastos conjuntos de datos.
+                            </p>
+                            <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+                                Estas sistemas utilizan arquitecturas avanzadas como <strong>Transformers y
+                                    Redes Generativas Adversariales (GANs)</strong>
+                                para comprender la estructura profunda de los datos de entrenamiento y generar
+                                nuevas
+                                instancias que mantienen las características esenciales del original, pero con
+                                variaciones únicas.
+                            </p>
+                            <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-800 mb-2 text-sm md:text-base">Definición Técnica</h4>
+                                <p class="text-xs md:text-sm text-blue-700 leading-relaxed">
+                                    "Sistemas de machine learning que aprenden las distribuciones de
+                                    probabilidad subyacentes
+                                    en los datos de entrenamiento para generar nuevas muestras que podrían
+                                    plausiblemente
+                                    haber formado parte del conjunto de datos original."
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm border">
+                            <h4 class="font-bold text-[#0369a1] mb-4 text-center text-lg md:text-xl">Características Fundamentales
+                            </h4>
+                            <div class="space-y-3 md:space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="bg-green-100 text-green-800 p-2 rounded-lg mt-1 flex-shrink-0">
+                                        <i class="fas fa-plus-circle text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm md:text-base">Creatividad Computacional</p>
+                                        <p class="text-xs md:text-sm text-gray-600">Capacidad de producir contenido
+                                            novedoso que no existe en los datos de entrenamiento</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="bg-blue-100 text-blue-800 p-2 rounded-lg mt-1 flex-shrink-0">
+                                        <i class="fas fa-project-diagram text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm md:text-base">Aprendizaje de Patrones Complejos
+                                        </p>
+                                        <p class="text-xs md:text-sm text-gray-600">Identifica relaciones sofisticadas en
+                                            datos multimodales</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="bg-purple-100 text-purple-800 p-2 rounded-lg mt-1 flex-shrink-0">
+                                        <i class="fas fa-sliders-h text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm md:text-base">Adaptación Contextual</p>
+                                        <p class="text-xs md:text-sm text-gray-600">Se ajusta a diferentes estilos, tonos y
+                                            requisitos específicos</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="bg-yellow-100 text-yellow-800 p-2 rounded-lg mt-1 flex-shrink-0">
+                                        <i class="fas fa-sync-alt text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm md:text-base">Mejora Iterativa</p>
+                                        <p class="text-xs md:text-sm text-gray-600">Aprende continuamente mediante feedback
+                                            y refinamiento</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proceso de Funcionamiento - Optimizado -->
+            <div class="max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#0369a1] mb-6 md:mb-8 text-center">¿Cómo Funciona la IA Generativa?
+                </h3>
+
+                <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-lg p-4 md:p-6 lg:p-8 border border-gray-200">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                        <!-- Paso 1 -->
+                        <div class="text-center">
+                            <div
+                                class="bg-[#7c3aed] text-white rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4 shadow-lg">
+                                1
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2 md:mb-3 text-sm md:text-base">Recolección y Preprocesamiento</h4>
+                            <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                Se recopilan millones de ejemplos (texto, imágenes, código) y se normalizan para
+                                el entrenamiento
+                            </p>
+                            <div class="mt-2 md:mt-3 text-xs text-purple-600">
+                                <i class="fas fa-database mr-1"></i>Big Data
+                            </div>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="text-center">
+                            <div
+                                class="bg-[#06b6d4] text-white rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4 shadow-lg">
+                                2
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2 md:mb-3 text-sm md:text-base">Entrenamiento del Modelo</h4>
+                            <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                La IA analiza patrones, relaciones y estructuras mediante algoritmos de deep
+                                learning
+                            </p>
+                            <div class="mt-2 md:mt-3 text-xs text-cyan-600">
+                                <i class="fas fa-brain mr-1"></i>Deep Learning
+                            </div>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div class="text-center">
+                            <div
+                                class="bg-[#10b981] text-white rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4 shadow-lg">
+                                3
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2 md:mb-3 text-sm md:text-base">Generación de Contenido</h4>
+                            <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                Basándose en prompts, el modelo genera nuevo contenido probabilístico coherente
+                            </p>
+                            <div class="mt-2 md:mt-3 text-xs text-green-600">
+                                <i class="fas fa-magic mr-1"></i>Generación
+                            </div>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div class="text-center">
+                            <div
+                                class="bg-[#f59e0b] text-white rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4 shadow-lg">
+                                4
+                            </div>
+                            <h4 class="font-bold text-gray-800 mb-2 md:mb-3 text-sm md:text-base">Refinamiento y Evaluación</h4>
+                            <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                                El output se evalúa, se ajustan parámetros y se itera para mejorar la calidad
+                            </p>
+                            <div class="mt-2 md:mt-3 text-xs text-yellow-600">
+                                <i class="fas fa-check-circle mr-1"></i>Optimización
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ejemplo Técnico -->
+                    <div class="mt-6 md:mt-8 bg-white p-4 md:p-6 rounded-lg border">
+                        <h5 class="font-bold text-gray-800 mb-3 flex items-center text-sm md:text-base">
+                            <i class="fas fa-code mr-2 text-[#7c3aed]"></i>Ejemplo Técnico: Arquitectura
+                            Transformer
+                        </h5>
+                        <div
+                            class="bg-gray-800 text-green-400 p-3 md:p-4 rounded-lg font-mono text-xs md:text-sm overflow-x-auto">
+                            <span class="text-gray-400"># Mecanismo de Atención en Transformers</span><br>
+                            <span class="text-blue-400">def</span> <span
+                                class="text-yellow-400">attention</span>(query, key, value):<br>
+                            &nbsp;&nbsp;<span class="text-gray-400"># Calcula similitud entre queries y
+                                keys</span><br>
+                            &nbsp;&nbsp;scores = torch.matmul(query, key.transpose(-2, -1))<br>
+                            &nbsp;&nbsp;scores = scores / math.sqrt(key.size(-1))<br>
+                            &nbsp;&nbsp;<span class="text-gray-400"># Aplica softmax para obtener
+                                pesos</span><br>
+                            &nbsp;&nbsp;weights = torch.softmax(scores, dim=-1)<br>
+                            &nbsp;&nbsp;<span class="text-gray-400"># Combina valores según los pesos</span><br>
+                            &nbsp;&nbsp;output = torch.matmul(weights, value)<br>
+                            &nbsp;&nbsp;<span class="text-blue-400">return</span> output<br>
+                        </div>
+                        <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed">
+                            Este mecanismo permite a modelos como GPT entender el contexto y las relaciones
+                            entre palabras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramientas de IA Generativa - COMPLETAMENTE OPTIMIZADA -->
+            <div class="max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#0369a1] mb-6 md:mb-8 text-center">Ecosistema de Herramientas de IA
+                    Generativa</h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+                    <!-- ChatGPT Card Optimizada -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-3 md:p-4 lg:p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 text-center flex flex-col h-full">
+                        <div class="flex justify-center mb-3 md:mb-4">
+                            <div class="bg-green-100 p-3 md:p-4 rounded-xl inline-flex items-center justify-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/240px-ChatGPT_logo.svg.png"
+                                    alt="ChatGPT Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            </div>
+                        </div>
+                        
+                        <div class="text-center flex-grow flex flex-col">
+                            <h4 class="font-bold text-gray-900 mb-2 md:mb-3 text-base md:text-lg">ChatGPT</h4>
+                            <p class="text-gray-700 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed flex-grow">
+                                Modelo de lenguaje conversacional basado en arquitectura GPT-4, capaz de entender y 
+                                generar texto natural en múltiples idiomas.
+                            </p>
+                            
+                            <div class="mb-3 md:mb-4">
+                                <span class="text-xs font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                                    APLICACIONES
+                                </span>
+                                <div class="flex flex-col gap-1">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
+                                        Asistencia en Coding
+                                    </span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
+                                        Redacción
+                                    </span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
+                                        Análisis
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-xs text-gray-600 font-medium mt-auto">
+                                <i class="fas fa-calendar mr-1"></i>Lanzamiento: Nov 2022
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Copilot Card Optimizada -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-3 md:p-4 lg:p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 text-center flex flex-col h-full">
+                        <div class="flex justify-center mb-3 md:mb-4">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-3 md:p-4 rounded-xl inline-flex items-center justify-center">
+                                <img src="https://tse3.mm.bing.net/th/id/OIP.47mMK1TDQyKF28TuRkcdFwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                                    alt="GitHub Copilot Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            </div>
+                        </div>
+                        
+                        <div class="text-center flex-grow flex flex-col">
+                            <h4 class="font-bold text-gray-900 mb-2 md:mb-3 text-base md:text-lg">GitHub Copilot</h4>
+                            <p class="text-gray-700 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed flex-grow">
+                                Asistente de código AI que sugiere líneas y funciones completas en tiempo real,
+                                integrado directamente en el IDE.
+                            </p>
+                            
+                            <div class="mb-3 md:mb-4">
+                                <span class="text-xs font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                                    LENGUAJES
+                                </span>
+                                <div class="flex flex-col gap-1">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
+                                        Python
+                                    </span>
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
+                                        JavaScript
+                                    </span>
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
+                                        TypeScript
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-xs text-gray-600 font-medium mt-auto">
+                                <i class="fas fa-code mr-1"></i>VS Code, JetBrains
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DALL-E 3 Card Optimizada -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-3 md:p-4 lg:p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 text-center flex flex-col h-full">
+                        <div class="flex justify-center mb-3 md:mb-4">
+                            <div class="bg-purple-100 p-3 md:p-4 rounded-xl inline-flex items-center justify-center">
+                                <img src="https://tse3.mm.bing.net/th/id/OIP.hAiT5gvF2sDiY0bXN8d47AHaHV?rs=1&pid=ImgDetMain&o=7&rm=3"
+                                    alt="DALL-E Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            </div>
+                        </div>
+                        
+                        <div class="text-center flex-grow flex flex-col">
+                            <h4 class="font-bold text-gray-900 mb-2 md:mb-3 text-base md:text-lg">DALL-E 3</h4>
+                            <p class="text-gray-700 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed flex-grow">
+                                Sistema de generación de imágenes que transforma descripciones textuales en imágenes
+                                realistas y artísticas de alta calidad.
+                            </p>
+                            
+                            <div class="mb-3 md:mb-4">
+                                <span class="text-xs font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                                    CARACTERÍSTICAS
+                                </span>
+                                <div class="flex flex-col gap-1">
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">
+                                        Alta Resolución
+                                    </span>
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">
+                                        Múltiples Estilos
+                                    </span>
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">
+                                        Edición Contextual
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-xs text-gray-600 font-medium mt-auto">
+                                <i class="fas fa-image mr-1"></i>Resolución: 1024x1024px
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Midjourney Card Optimizada -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-3 md:p-4 lg:p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 text-center flex flex-col h-full">
+                        <div class="flex justify-center mb-3 md:mb-4">
+                            <div class="bg-pink-100 p-3 md:p-4 rounded-xl inline-flex items-center justify-center">
+                                <img src="https://tse2.mm.bing.net/th/id/OIP.NGyj677qi24rtdapk3-q3QHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                                    alt="Midjourney Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            </div>
+                        </div>
+                        
+                        <div class="text-center flex-grow flex flex-col">
+                            <h4 class="font-bold text-gray-900 mb-2 md:mb-3 text-base md:text-lg">Midjourney</h4>
+                            <p class="text-gray-700 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed flex-grow">
+                                Plataforma especializada en generación de arte digital y concept art mediante
+                                prompts en Discord con enfoque artístico.
+                            </p>
+                            
+                            <div class="mb-3 md:mb-4">
+                                <span class="text-xs font-semibold text-gray-600 uppercase tracking-wide block mb-2">
+                                    ENFOQUE
+                                </span>
+                                <div class="flex flex-col gap-1">
+                                    <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">
+                                        Arte Digital
+                                    </span>
+                                    <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">
+                                        Concept Art
+                                    </span>
+                                    <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">
+                                        Ilustración
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-xs text-gray-600 font-medium mt-auto">
+                                <i class="fab fa-discord mr-1"></i>Plataforma: Discord
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herramientas Adicionales Optimizada -->
+                <div class="mt-6 md:mt-8 bg-gray-50 p-4 md:p-6 rounded-lg border">
+                    <h4 class="font-bold text-gray-800 mb-3 md:mb-4 text-center text-lg md:text-xl">Otras Herramientas Destacadas</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                        <div class="text-center">
+                            <div class="bg-orange-100 text-orange-800 p-2 md:p-3 rounded-full inline-block mb-2">
+                                <i class="fas fa-music text-sm md:text-base"></i>
+                            </div>
+                            <p class="font-semibold text-xs md:text-sm">Suno AI</p>
+                            <p class="text-xs text-gray-600">Generación musical</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-indigo-100 text-indigo-800 p-2 md:p-3 rounded-full inline-block mb-2">
+                                <i class="fas fa-video text-sm md:text-base"></i>
+                            </div>
+                            <p class="font-semibold text-xs md:text-sm">Runway ML</p>
+                            <p class="text-xs text-gray-600">Edición de video con IA</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-teal-100 text-teal-800 p-2 md:p-3 rounded-full inline-block mb-2">
+                                <i class="fas fa-wave-square text-sm md:text-base"></i>
+                            </div>
+                            <p class="font-semibold text-xs md:text-sm">ElevenLabs</p>
+                            <p class="text-xs text-gray-600">Síntesis de voz</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-rose-100 text-rose-800 p-2 md:p-3 rounded-full inline-block mb-2">
+                                <i class="fas fa-cube text-sm md:text-base"></i>
+                            </div>
+                            <p class="font-semibold text-xs md:text-sm">Stable Diffusion</p>
+                            <p class="text-xs text-gray-600">Imágenes open-source</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejemplos de Prompts Avanzados - Optimizado -->
+            <div class="max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#0369a1] mb-6 md:mb-8 text-center">Prompts Avanzados para Desarrollo
+                    Web</h3>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                    <!-- Desarrollo Web -->
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200">
+                        <h4 class="font-bold text-[#0369a1] mb-3 md:mb-4 flex items-center text-lg md:text-xl">
+                            <i class="fas fa-code mr-3"></i>Desarrollo Web y Programación
+                        </h4>
+
+                        <div class="space-y-4 md:space-y-6">
+                            <!-- Prompt 1 -->
+                            <div class="bg-white p-3 md:p-4 rounded border-l-4 border-[#0d9488] shadow-sm">
+                                <p class="text-xs md:text-sm text-gray-600 mb-2 font-semibold">PROMPT PARA ESTRUCTURA
+                                    COMPLETA:</p>
+                                <div class="bg-gray-800 text-green-400 p-2 md:p-3 rounded font-mono text-xs md:text-sm mb-2 md:mb-3 overflow-x-auto">
+                                    "Crea una aplicación React completa para gestión de tareas que incluya:
+                                    componentes funcionales con hooks, contexto para estado global,
+                                    persistencia en localStorage, filtros por estado (todas, completadas,
+                                    pendientes),
+                                    y tests unitarios básicos. Usa Tailwind CSS para los estilos."
+                                </div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-gray-500 gap-1">
+                                    <span>💡 <strong>Resultado esperado:</strong> Código production-ready</span>
+                                    <span>⏱️ Contexto extenso</span>
+                                </div>
+                            </div>
+
+                            <!-- Prompt 2 -->
+                            <div class="bg-white p-3 md:p-4 rounded border-l-4 border-[#f59e0b] shadow-sm">
+                                <p class="text-xs md:text-sm text-gray-600 mb-2 font-semibold">PROMPT PARA OPTIMIZACIÓN:
+                                </p>
+                                <div class="bg-gray-800 text-green-400 p-2 md:p-3 rounded font-mono text-xs md:text-sm mb-2 md:mb-3 overflow-x-auto">
+                                    "Optimiza esta función JavaScript para mejor rendimiento. Explica cada
+                                    cambio:
+                                    function processData(items) {
+                                    let result = [];
+                                    for(let i = 0; i < items.length; i++) { if(items[i].active) { result.push({
+                                        id: items[i].id, name: items[i].name.toUpperCase(), value:
+                                        items[i].value * 2 }); } } return result; }"
+                                </div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-gray-500 gap-1">
+                                    <span>🔧 <strong>Enfoque:</strong> Performance y buenas prácticas</span>
+                                    <span>📚 Incluye explicaciones</span>
+                                </div>
+                            </div>
+
+                            <!-- Prompt 3 -->
+                            <div class="bg-white p-3 md:p-4 rounded border-l-4 border-[#7c3aed] shadow-sm">
+                                <p class="text-xs md:text-sm text-gray-600 mb-2 font-semibold">PROMPT PARA
+                                    ARQUITECTURA:</p>
+                                <div class="bg-gray-800 text-green-400 p-2 md:p-3 rounded font-mono text-xs md:text-sm mb-2 md:mb-3 overflow-x-auto">
+                                    "Diseña la arquitectura de una aplicación e-commerce con microservicios.
+                                    Incluye: diagrama de componentes, APIs REST, base de datos,
+                                    autenticación JWT,
+                                    servicio de pagos, y estrategia de deployment en cloud. Usa patrones de
+                                    diseño apropiados."
+                                </div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-gray-500 gap-1">
+                                    <span>🏗️ <strong>Nivel:</strong> Arquitectónico</span>
+                                    <span>☁️ Escalabilidad cloud</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño y Creatividad -->
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200">
+                        <h4 class="font-bold text-[#0369a1] mb-3 md:mb-4 flex items-center text-lg md:text-xl">
+                            <i class="fas fa-paint-brush mr-3"></i>Diseño y Creatividad
+                        </h4>
+
+                        <div class="space-y-4 md:space-y-6">
+                            <!-- Prompt 1 -->
+                            <div class="bg-white p-3 md:p-4 rounded border-l-4 border-[#06b6d4] shadow-sm">
+                                <p class="text-xs md:text-sm text-gray-600 mb-2 font-semibold">PROMPT PARA DISEÑO DE
+                                    UI:</p>
+                                <div class="bg-gray-800 text-green-400 p-2 md:p-3 rounded font-mono text-xs md:text-sm mb-2 md:mb-3 overflow-x-auto">
+                                    "Crea un sistema de diseño para una fintech que transmita seguridad y
+                                    modernidad.
+                                    Incluye: paleta de colores (azules y verdes), tipografía (Inter +
+                                    monoespaciada),
+                                    componentes de formulario, tablas de datos, y estados de loading/error.
+                                    Especifica tokens de diseño para light/dark mode."
+                                </div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-gray-500 gap-1">
+                                    <span>🎨 <strong>Vertical:</strong> Fintech</span>
+                                    <span>🌙 Dark/Light mode</span>
+                                </div>
+                            </div>
+
+                            <!-- Prompt 2 -->
+                            <div class="bg-white p-3 md:p-4 rounded border-l-4 border-[#dc2626] shadow-sm">
+                                <p class="text-xs md:text-sm text-gray-600 mb-2 font-semibold">PROMPT PARA BRANDING:
+                                </p>
+                                <div class="bg-gray-800 text-green-400 p-2 md:p-3 rounded font-mono text-xs md:text-sm mb-2 md:mb-3 overflow-x-auto">
+                                    "Desarrolla la identidad visual completa para una startup de educación
+                                    en IA llamada 'NeuroLearn'.
+                                    Incluye: logo, paleta de colores (azul cerebro + naranja energía),
+                                    tipografía,
+                                    guidelines de marca, y aplicaciones (tarjetas, presentaciones, web).
+                                    Enfócate en innovación y accesibilidad."
+                                </div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-gray-500 gap-1">
+                                    <span>🚀 <strong>Sector:</strong> EdTech</span>
+                                    <span>📐 Sistema completo</span>
+                                </div>
+                            </div>
+
+                            <!-- Prompt 3 -->
+                            <div class="bg-white p-3 md:p-4 rounded border-l-4 border-[#10b981] shadow-sm">
+                                <p class="text-xs md:text-sm text-gray-600 mb-2 font-semibold">PROMPT PARA UX RESEARCH:
+                                </p>
+                                <div class="bg-gray-800 text-green-400 p-2 md:p-3 rounded font-mono text-xs md:text-sm mb-2 md:mb-3 overflow-x-auto">
+                                    "Genera un plan de investigación de usuarios para una app de delivery de
+                                    comida.
+                                    Incluye: perfiles de usuario, journey maps, escenarios de uso, preguntas
+                                    para entrevistas,
+                                    y métricas de usabilidad. Considera diferentes dispositivos y contextos
+                                    de uso."
+                                </div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-gray-500 gap-1">
+                                    <span>👥 <strong>Metodología:</strong> User-Centered Design</span>
+                                    <span>📊 Métricas incluidas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips para Prompts Efectivos -->
+                <div class="mt-6 md:mt-8 bg-gradient-to-r from-[#0369a1] to-[#0d9488] text-white p-4 md:p-6 rounded-lg">
+                    <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-center">💡 Mejores Prácticas para Prompts
+                        Efectivos</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                        <ul class="space-y-2 text-blue-100">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1 text-[#f59e0b] flex-shrink-0"></i>
+                                <span class="text-sm"><strong>Especificidad:</strong> Sé claro y detallado en tus
+                                    requerimientos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1 text-[#f59e0b] flex-shrink-0"></i>
+                                <span class="text-sm"><strong>Contexto:</strong> Proporciona información de fondo
+                                    relevante</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1 text-[#f59e0b] flex-shrink-0"></i>
+                                <span class="text-sm"><strong>Formato:</strong> Especifica el formato de salida
+                                    deseado</span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-2 text-blue-100">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1 text-[#f59e0b] flex-shrink-0"></i>
+                                <span class="text-sm"><strong>Iteración:</strong> Refina prompts basado en resultados
+                                    anteriores</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1 text-[#f59e0b] flex-shrink-0"></i>
+                                <span class="text-sm"><strong>Ejemplos:</strong> Incluye ejemplos del formato
+                                    esperado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1 text-[#f59e0b] flex-shrink-0"></i>
+                                <span class="text-sm"><strong>Restricciones:</strong> Define límites y constraints
+                                    claros</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- El resto del contenido (Análisis de Aplicación Real, Reflexión Ética, Debate Final) -->
+            <!-- ... mantener la misma estructura de optimización para las secciones restantes ... -->
+
+
+                        <!-- Análisis de Aplicación Real - Optimizado -->
+<div class="max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#0369a1] mb-6 md:mb-8 text-center">Análisis Profundo: GitHub
+        Copilot en VS Code</h3>
+
+    <div class="bg-[#f0f9ff] border border-[#e0f2fe] rounded-lg p-4 md:p-6 lg:p-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
+            <div class="h-full flex flex-col">
+                <h4 class="font-bold text-[#0369a1] text-lg md:text-xl mb-3 md:mb-4">Impacto en el Flujo de
+                    Desarrollo</h4>
+
+                <div class="space-y-3 md:space-y-4">
+                    <div class="bg-white p-3 md:p-4 rounded-lg shadow-sm border">
+                        <h5 class="font-semibold text-gray-800 mb-2 flex items-center text-sm md:text-base">
+                            <i class="fas fa-rocket text-green-600 mr-2"></i>Aceleración del
+                            Desarrollo
+                        </h5>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            Estudios muestran incrementos de <strong>55% en velocidad de
+                                coding</strong> para tareas rutinarias
+                            y hasta <strong>35% para código complejo</strong>.
+                        </p>
+                    </div>
+
+
+                    
+                    <div class="bg-white p-3 md:p-4 rounded-lg shadow-sm border">
+                        <h5 class="font-semibold text-gray-800 mb-2 flex items-center text-sm md:text-base">
+                            <i class="fas fa-shield-alt text-blue-600 mr-2"></i>Reducción de
+                            Errores
+                        </h5>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            Disminución del <strong>40% en bugs comunes</strong> gracias a
+                            sugerencias de código probado
+                            y mejores prácticas integradas.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-3 md:p-4 rounded-lg shadow-sm border">
+                        <h5 class="font-semibold text-gray-800 mb-2 flex items-center text-sm md:text-base">
+                            <i class="fas fa-graduation-cap text-purple-600 mr-2"></i>Curva de
+                            Aprendizaje
+                        </h5>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            Los desarrolladores junior muestran <strong>mejora del 70% en
+                                calidad de código</strong>
+                            durante sus primeros 6 meses usando la herramienta.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-auto md:mt-6 bg-yellow-50 p-3 md:p-4 rounded-lg border border-yellow-200">
+                    <h5 class="font-semibold text-yellow-800 mb-2 text-sm md:text-base">📈 Métricas de Impacto</h5>
+                    <div class="grid grid-cols-2 gap-3 md:gap-4 text-xs md:text-sm">
+                        <div>
+                            <p class="font-bold text-yellow-700">55%</p>
+                            <p class="text-yellow-600">Aumento productividad</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-yellow-700">40%</p>
+                            <p class="text-yellow-600">Menos errores</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-yellow-700">70%</p>
+                            <p class="text-yellow-600">Mejora juniors</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-yellow-700">3.2x</p>
+                            <p class="text-yellow-600">ROI estimado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-full flex flex-col">
+                <h4 class="font-bold text-[#0369a1] text-lg md:text-xl mb-3 md:mb-4">Ejemplo Práctico en Action
+                </h4>
+
+                <div class="bg-gray-900 rounded-lg p-3 md:p-4 mb-3 md:mb-4">
+                    <div class="flex space-x-2 mb-2 md:mb-3">
+                        <div class="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-2 h-2 md:w-3 md:h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div class="font-mono text-xs md:text-sm text-green-400 leading-relaxed">
+                        <span class="text-gray-400">// Desarrollador escribe:</span><br>
+                        <span class="text-blue-400">function</span> <span
+                            class="text-yellow-400">calculateTax</span>(amount, taxRate) {<br>
+                        &nbsp;&nbsp;<br>
+                        &nbsp;&nbsp;<span class="text-gray-400">// Copilot sugiere
+                            automáticamente:</span><br>
+                        &nbsp;&nbsp;<span class="text-green-400">if</span> (amount <= <span
+                            class="text-cyan-400">0</span> || taxRate < <span
+                                class="text-cyan-400">0</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">throw
+                                    new</span> <span class="text-yellow-400">Error</span>(<span
+                                    class="text-orange-400">'Amount and tax rate must be
+                                    positive'</span>);<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;<span class="text-green-400">return</span> amount *
+                                (taxRate / <span class="text-cyan-400">100</span>);<br>
+                                }<br>
+                                <br>
+                                <span class="text-gray-400">// También sugiere
+                                    documentación:</span><br>
+                                <span class="text-gray-400">/**</span><br>
+                                <span class="text-gray-400"> * Calcula el impuesto sobre un
+                                    monto dado</span><br>
+                                <span class="text-gray-400"> * @param {number} amount - Monto
+                                    base</span><br>
+                                <span class="text-gray-400"> * @param {number} taxRate - Tasa de
+                                    impuesto en porcentaje</span><br>
+                                <span class="text-gray-400"> * @returns {number} - Monto del
+                                    impuesto</span><br>
+                                <span class="text-gray-400"> * @throws {Error} - Si amount o
+                                    taxRate son inválidos</span><br>
+                                <span class="text-gray-400"> */</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-3 md:p-4 rounded-lg border mt-auto">
+                    <h5 class="font-semibold text-gray-800 mb-2 text-sm md:text-base">🔧 Características Inteligentes
+                    </h5>
+                    <ul class="text-xs md:text-sm text-gray-600 space-y-1 list-disc list-inside leading-relaxed">
+                        <li><strong>Context Awareness:</strong> Entiende el proyecto y código
+                            circundante</li>
+                        <li><strong>Multi-language Support:</strong> Soporte para 50+ lenguajes
+                            de programación</li>
+                        <li><strong>Test Generation:</strong> Genera tests unitarios
+                            automáticamente</li>
+                        <li><strong>Code Explanation:</strong> Explica código complejo en
+                            comentarios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reflexión Ética Extendida - Optimizada -->
+<!-- Ética y Responsabilidad en IA Generativa - DISEÑO RENOVADO -->
+<!-- Ética y Responsabilidad en IA Generativa - DISEÑO LIMPIO -->
+<div class="max-w-6xl mx-auto mb-8 md:mb-12 lg:mb-16">
+    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#0369a1] mb-6 md:mb-8 text-center">Ética y Responsabilidad en IA Generativa</h3>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        <!-- Consideraciones Éticas -->
+        <div class="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-gray-100">
+            <h4 class="font-bold text-gray-800 mb-6 flex items-center text-xl md:text-2xl">
+                <i class="fas fa-exclamation-circle mr-4 text-blue-500 text-2xl"></i>
+                Desafíos Éticos Críticos
+            </h4>
+
+            <div class="space-y-8">
+                <!-- Sesgos Algorítmicos -->
+                <div class="pb-6 border-b border-gray-100">
+                    <h5 class="font-semibold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-3 text-sm">🤖</span>
+                        Sesgos Algorítmicos y Discriminación
+                    </h5>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Los modelos de IA pueden perpetuar y amplificar sesgos presentes en los datos de entrenamiento,
+                        leading to discriminación sistémica en hiring, lending, y otros sistemas críticos.
+                    </p>
+                    <div class="text-gray-500 text-sm bg-blue-50 px-4 py-2 rounded-lg">
+                        <strong>Ejemplo:</strong> Sistemas de reclutamiento que favorecen candidatos masculinos
+                        por entrenarse en datos históricos sesgados.
+                    </div>
+                </div>
+
+                <!-- Propiedad Intelectual -->
+                <div class="pb-6 border-b border-gray-100">
+                    <h5 class="font-semibold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="w-8 h-8 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mr-3 text-sm">⚖️</span>
+                        Propiedad Intelectual y Derechos de Autor
+                    </h5>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        ¿Quién es el dueño del contenido generado por IA? ¿Los artistas cuyas obras fueron
+                        usadas para entrenamiento merecen compensación?
+                    </p>
+                    <div class="text-gray-500 text-sm bg-purple-50 px-4 py-2 rounded-lg">
+                        <strong>Caso:</strong> Demandas contra Stability AI y Midjourney por uso de datos de entrenamiento sin licencia.
+                    </div>
+                </div>
+
+                <!-- Privacidad y Seguridad -->
+                <div class="pb-6 border-b border-gray-100">
+                    <h5 class="font-semibold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mr-3 text-sm">🔒</span>
+                        Privacidad y Seguridad de Datos
+                    </h5>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Los datos ingresados en sistemas de IA pueden ser almacenados y utilizados para
+                        entrenamiento futuro, potentially exponiendo información sensible.
+                    </p>
+                    <div class="text-gray-500 text-sm bg-indigo-50 px-4 py-2 rounded-lg">
+                        <strong>Riesgo:</strong> Filtración de código propietario o información confidencial de empresas.
+                    </div>
+                </div>
+
+                <!-- Impacto Laboral -->
+                <div>
+                    <h5 class="font-semibold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="w-8 h-8 bg-cyan-100 text-cyan-600 rounded-lg flex items-center justify-center mr-3 text-sm">🌐</span>
+                        Impacto Laboral y Desigualdad Económica
+                    </h5>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Automatización de trabajos creativos y técnicos podría exacerbar desigualdades
+                        económicas y desplazar trabajadores sin programas de transición adecuados.
+                    </p>
+                    <div class="text-gray-500 text-sm bg-cyan-50 px-4 py-2 rounded-lg">
+                        <strong>Estudio:</strong> 300 millones de empleos podrían ser afectados según Goldman Sachs.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buenas Prácticas -->
+        <div class="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-gray-100">
+            <h4 class="font-bold text-gray-800 mb-6 flex items-center text-xl md:text-2xl">
+                <i class="fas fa-check-circle mr-4 text-green-500 text-2xl"></i>
+                Marco de Buenas Prácticas
+            </h4>
+
+            <div class="space-y-8">
+                <!-- Validación Humana -->
+                <div class="pb-6 border-b border-gray-100">
+                    <h5 class="font-semibold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="w-8 h-8 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mr-3 text-sm">👁️</span>
+                        Validación Humana y Supervisión
+                    </h5>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Implementar revisiones humanas críticas de todo output de IA, especialmente
+                        en aplicaciones de alto impacto como healthcare, finance, y legal.
+                    </p>
+                    <div class="text-gray-500 text-sm bg-green-50 px-4 py-2 rounded-lg">
+                        <strong>Implementación:</strong> Procesos de review multi-capas con expertos de dominio.
+                    </div>
+                </div>
+
+                <!-- Transparencia -->
+                <div class="pb-6 border-b border-gray-100">
+                    <h5 class="font-semibold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="w-8 h-8 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mr-3 text-sm">📝</span>
+                        Transparencia y Atribución
+                    </h5>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Ser explícito sobre el uso de IA en proyectos y productos. Desarrollar
+                        sistemas de atribución que reconozcan la contribución humana y artificial.
+                    </p>
+                    <div class="text-gray-500 text-sm bg-teal-50 px-4 py-2 rounded-lg">
+                        <strong>Ejemplo:</strong> Etiquetas "AI-assisted" en contenido generado.
+                    </div>
+                </div>
+
+                <!-- Privacidad por Diseño -->
+                <div class="pb-6 border-b border-gray-100">
+                    <h5 class="font-semibold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-3 text-sm">🛡️</span>
+                        Privacidad por Diseño
+                    </h5>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Implementar arquitecturas que minimicen la recolección de datos y permitan
+                        entrenamiento federado. Ofrecer opciones de opt-out claras.
+                    </p>
+                    <div class="text-gray-500 text-sm bg-blue-50 px-4 py-2 rounded-lg">
+                        <strong>Tecnología:</strong> Differential privacy y encrypted learning.
+                    </div>
+                </div>
+
+                <!-- Educación -->
+                <div>
+                    <h5 class="font-semibold text-gray-800 mb-3 text-lg flex items-center">
+                        <span class="w-8 h-8 bg-amber-100 text-amber-700 rounded-lg flex items-center justify-center mr-3 text-sm">🎓</span>
+                        Educación y Alfabetización Digital
+                    </h5>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Invertir en programas educativos que preparen a la fuerza laboral para la
+                        colaboración con IA y desarrollen pensamiento crítico sobre tecnología.
+                    </p>
+                    <div class="text-gray-500 text-sm bg-amber-50 px-4 py-2 rounded-lg">
+                        <strong>Iniciativa:</strong> Cursos de "AI literacy" en educación básica y continua.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Marco Regulatorio -->
+    <div class="mt-6 md:mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4 md:p-6">
+        <h4 class="font-bold text-blue-800 mb-3 md:mb-4 text-center text-lg md:text-xl">🏛️ Marco Regulatorio Emergente
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 text-center">
+            <div>
+                <div class="bg-white p-2 md:p-3 rounded-full inline-block mb-2">
+                    <i class="fas fa-gavel text-blue-600 text-lg md:text-xl"></i>
+                </div>
+                <h5 class="font-semibold text-blue-700 text-sm md:text-base">EU AI Act</h5>
+                <p class="text-xs text-blue-600">Primera regulación comprehensiva de IA, enfoque
+                    en riesgo</p>
+            </div>
+            <div>
+                <div class="bg-white p-2 md:p-3 rounded-full inline-block mb-2">
+                    <i class="fas fa-flag-usa text-blue-600 text-lg md:text-xl"></i>
+                </div>
+                <h5 class="font-semibold text-blue-700 text-sm md:text-base">NIST AI RMF</h5>
+                <p class="text-xs text-blue-600">Framework de gestión de riesgo de IA en EE.UU.
+                </p>
+            </div>
+            <div>
+                <div class="bg-white p-2 md:p-3 rounded-full inline-block mb-2">
+                    <i class="fas fa-balance-scale text-blue-600 text-lg md:text-xl"></i>
+                </div>
+                <h5 class="font-semibold text-blue-700 text-sm md:text-base">UNESCO Ethics</h5>
+                <p class="text-xs text-blue-600">Recomendaciones globales para IA ética</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Debate Final Extendido - Optimizado -->
+<div class="max-w-6xl mx-auto">
+    <div class="bg-gradient-to-r from-[#0369a1] to-[#0d9488] text-white rounded-lg p-4 md:p-6 lg:p-8">
+        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 text-center">Debate Crítico: El Futuro del Desarrollo
+            con IA</h3>
+        <h4 class="text-lg md:text-xl lg:text-2xl font-bold mb-6 md:mb-8 text-center">¿La IA Reemplaza o Potencia al
+            Desarrollador?</h4>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8 items-stretch">
+            <!-- Postura 1 - Potencia -->
+            <div class="bg-white bg-opacity-10 p-4 md:p-6 rounded-lg backdrop-blur-sm h-full flex flex-col">
+                <h5 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-[#f59e0b] text-center">🎯 La IA como
+                    POTENCIADOR del Desarrollador</h5>
+
+                <div class="space-y-3 md:space-y-4 flex-grow">
+                    <div class="flex items-start">
+                        <div class="bg-[#f59e0b] text-[#0369a1] p-2 rounded-lg mt-1 mr-3 flex-shrink-0">
+                            <i class="fas fa-rocket text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm md:text-base">Amplificación de Capacidades Humanas</p>
+                            <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                                La IA maneja tareas repetitivas permitiendo a los
+                                desarrolladores
+                                enfocarse en problemas complejos, arquitectura y creatividad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-[#f59e0b] text-[#0369a1] p-2 rounded-lg mt-1 mr-3 flex-shrink-0">
+                            <i class="fas fa-lightbulb text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm md:text-base">Democratización del Desarrollo</p>
+                            <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                                Reduce barreras de entrada y permite a más personas crear
+                                software,
+                                similar a lo que hizo WordPress para el desarrollo web.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-[#f59e0b] text-[#0369a1] p-2 rounded-lg mt-1 mr-3 flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm md:text-base">Mentoría y Aprendizaje Continuo</p>
+                            <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                                Funciona como tutor 24/7, acelerando el aprendizaje y
+                                facilitando
+                                la adopción de nuevas tecnologías y mejores prácticas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-[#f59e0b] text-[#0369a1] p-2 rounded-lg mt-1 mr-3 flex-shrink-0">
+                            <i class="fas fa-tools text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm md:text-base">Innovación Acelerada</p>
+                            <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                                Permite prototipado rápido y exploración de múltiples
+                                soluciones,
+                                acelerando ciclos de innovación y time-to-market.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 md:mt-6 p-3 md:p-4 bg-white bg-opacity-20 rounded-lg">
+                    <p class="text-xs md:text-sm italic text-center leading-relaxed">
+                        "La IA no reemplaza a los desarrolladores; reemplaza a los
+                        desarrolladores
+                        que no usan IA. Es la herramienta definitiva para la amplificación
+                        cognitiva."
+                    </p>
+                    <p class="text-xs md:text-sm font-semibold mt-2 text-center text-[#f59e0b]">
+                        - Andreesen Horowitz, 2024
+                    </p>
+                </div>
+            </div>
+
+            <!-- Postura 2 - Reemplaza -->
+            <div class="bg-white bg-opacity-10 p-4 md:p-6 rounded-lg backdrop-blur-sm h-full flex flex-col">
+                <h5 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-[#ef4444] text-center">⚠️ La IA como
+                    REEMPLAZO del Desarrollador</h5>
+
+                <div class="space-y-3 md:space-y-4 flex-grow">
+                    <div class="flex items-start">
+                        <div class="bg-[#ef4444] text-white p-2 rounded-lg mt-1 mr-3 flex-shrink-0">
+                            <i class="fas fa-robot text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm md:text-base">Desvalorización de Habilidades Básicas</p>
+                            <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                                La automatización de coding fundamentals podría crear una
+                                generación
+                                de desarrolladores dependientes sin comprensión profunda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-[#ef4444] text-white p-2 rounded-lg mt-1 mr-3 flex-shrink-0">
+                            <i class="fas fa-brain text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm md:text-base">Atrofia de Competencias Críticas</p>
+                            <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                                Dependencia excesiva puede erosionar habilidades de debugging,
+                                optimización y pensamiento algorítmico fundamental.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-[#ef4444] text-white p-2 rounded-lg mt-1 mr-3 flex-shrink-0">
+                            <i class="fas fa-chart-line text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm md:text-base">Consolidación y Concentración</p>
+                            <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                                Empresas con recursos para desarrollar IA propietaria podrían
+                                dominar el mercado, reduciendo oportunidades para pequeños
+                                jugadores.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="bg-[#ef4444] text-white p-2 rounded-lg mt-1 mr-3 flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm md:text-base">Homogenización y Pérdida de Diversidad</p>
+                            <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                                Modelos entrenados en código existente pueden perpetuar malas
+                                prácticas
+                                y reducir la diversidad de enfoques y soluciones creativas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 md:mt-6 p-3 md:p-4 bg-white bg-opacity-20 rounded-lg">
+                    <p class="text-xs md:text-sm italic text-center leading-relaxed">
+                        "El peligro no es que las máquinas piensen como humanos, sino que los
+                        humanos
+                        piensen como máquinas. La IA podría crear desarrolladores que solo saben
+                        describir problemas, no resolverlos."
+                    </p>
+                    <p class="text-xs md:text-sm font-semibold mt-2 text-center text-[#ef4444]">
+                        - Preocupación de la Academia, 2024
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusión Integradora -->
+        <div class="bg-white bg-opacity-20 p-4 md:p-6 lg:p-8 rounded-lg text-center">
+            <h5 class="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-[#f59e0b]">Nuestra Posición: El Camino del
+                Desarrollo Aumentado</h5>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="text-center">
+                    <div class="bg-white bg-opacity-30 p-3 md:p-4 rounded-full inline-block mb-2 md:mb-3">
+                        <i class="fas fa-chess-queen text-lg md:text-2xl text-[#f59e0b]"></i>
+                    </div>
+                    <h6 class="font-bold text-white mb-2 text-sm md:text-base">Estrategia, No Ejecución</h6>
+                    <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                        Los desarrolladores se convierten en arquitectos y estrategas,
+                        dejando la ejecución rutinaria a la IA
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-white bg-opacity-30 p-3 md:p-4 rounded-full inline-block mb-2 md:mb-3">
+                        <i class="fas fa-hands-helping text-lg md:text-2xl text-[#f59e0b]"></i>
+                    </div>
+                    <h6 class="font-bold text-white mb-2 text-sm md:text-base">Colaboración Simbiótica</h6>
+                    <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                        El valor está en la sinergia entre inteligencia humana
+                        (contexto, ética, creatividad) e inteligencia artificial
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-white bg-opacity-30 p-3 md:p-4 rounded-full inline-block mb-2 md:mb-3">
+                        <i class="fas fa-sync-alt text-lg md:text-2xl text-[#f59e0b]"></i>
+                    </div>
+                    <h6 class="font-bold text-white mb-2 text-sm md:text-base">Adaptación Continua</h6>
+                    <p class="text-xs md:text-sm text-blue-100 leading-relaxed">
+                        El rol del desarrollador evoluciona hacia el "AI whisperer" -
+                        quien mejor dirige la IA, crea más valor
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white bg-opacity-30 p-4 md:p-6 rounded-lg">
+                <p class="text-base md:text-lg font-semibold mb-3 md:mb-4 leading-relaxed">
+                    💡 <strong>Conclusión Final:</strong> La IA no reemplaza al desarrollador;
+                    <span class="text-[#f59e0b]">redefine la excelencia en el desarrollo</span>.
+                    El futuro pertenece a quienes dominen la colaboración humano-IA.
+                </p>
+                <p class="text-blue-100 text-sm md:text-base leading-relaxed">
+                    En lugar de preguntarnos "¿seremos reemplazados?", debemos preguntar
+                    "¿cómo podemos evolucionar junto con estas herramientas para crear
+                    valor que ninguna inteligencia, artificial o humana, podría crear sola?"
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-[#f59e0b]">Instituto Tecnológico</h3>
+                    <p class="text-gray-400 mb-4">
+                        Formando los profesionales del futuro con excelencia académica y valores.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="nav-link text-gray-400 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#cargar-alumno" class="nav-link text-gray-400 hover:text-white transition">Cargar
+                                Alumno</a></li>
+                        <li><a href="#listado-alumnos"
+                                class="nav-link text-gray-400 hover:text-white transition">Listado</a></li>
+                        <li><a href="#historia" class="nav-link text-gray-400 hover:text-white transition">Historia</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-[#0d9488]"></i>
+                            Av. Siempre Viva 123
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#0d9488]"></i>
+                            +54 11 1234-5678
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#0d9488]"></i>
+                            info@instituto.edu.ar
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Horarios</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Lunes a Viernes: 8:00 - 22:00</li>
+                        <li>Sábados: 8:00 - 13:00</li>
+                        <li>Domingos: Cerrado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Instituto Tecnológico. Todos los derechos reservados.</p>
+                <p class="text-sm mt-2">Proyecto Final Integrador - Portal Institucional + Unidad 6 (IA Generativa)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="clima.js"></script>
+    <script src="alumnos.js"></script>
+    <script src="ia.js"></script>
+</body>
+
+</html>
