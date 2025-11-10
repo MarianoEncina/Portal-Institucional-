@@ -79,6 +79,16 @@ open index.html
 python -m http.server 8000
 # Luego visitar: http://localhost:8000
 
+Estructura
+portal-institucional/
+├── index.html          # Archivo principal
+├── A.css              # Estilos personalizados
+├── main.js            # Navegación y funcionalidades principales
+├── clima.js           # Lógica del widget de clima
+├── alumnos.js         # Gestión de alumnos (CRUD)
+├── ia.js              # Funcionalidades de la sección IA
+└── README.md          # Este archivo
+
 🌐 Deployment
 El proyecto está desplegado en Netlify y disponible en:
 
