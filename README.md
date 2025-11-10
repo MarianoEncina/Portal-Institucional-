@@ -87,6 +87,8 @@ portal-institucional/
 ├── clima.js           # Lógica del widget de clima
 ├── alumnos.js         # Gestión de alumnos (CRUD)
 ├── ia.js              # Funcionalidades de la sección IA
+├── server.js          # iniciar el server para el render
+├── package.json       #iniciar el render
 └── README.md          # Este archivo
 
 🌐 Deployment
@@ -178,3 +180,29 @@ Funcionalidades Avanzadas
 ✅ Exportación de datos de alumnos
 
 ✅ Integración con APIs externas
+
+## 📦 Deploy en Render (instrucciones rápidas)
+
+1. Asegúrate de tener `package.json` con el script `start` (ya incluido):
+
+	"scripts": {
+	  "start": "node server.js"
+	}
+
+2. Procfile: ya se agregó `Procfile` con el contenido `web: node server.js`.
+
+3. Archivos estáticos: todas las imágenes se sirvan desde `assets/images` y `server.js` sirve la carpeta raíz como estático.
+
+4. Pasos en Render:
+
+	- Crear un nuevo servicio Web en https://render.com
+	- Conectar el repo (GitHub/GitLab)
+	- Seleccionar rama `main`
+	- Build Command: (vacío)
+	- Start Command: `npm start`
+
+5. Variables de entorno: si usas APIs externas (OpenWeather) añade la API key en Settings > Environment > Environment Variables.
+
+6. Verifica: después del deploy, visita la URL proporcionada por Render y comprueba que las imágenes locales cargan y que la app responde.
+
+Si quieres, puedo añadir un `.gitignore` recomendado y/o fijar la versión de Node en `package.json` (campo `engines`) para controlar el runtime en Render.
